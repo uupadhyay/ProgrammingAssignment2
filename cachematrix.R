@@ -1,7 +1,7 @@
 ## The following functions will compute the inverse of a matrix taking the benefit of 
 #  caching the inverse of a matrix rather than compute it repeatedly. Matrix inversions are computational heavy operations and
-# hence caching the inverse for a matrix which is not changed will help save computation expense. I wrote the pair of
-# functions that cache the inverse of a matrix.
+# hence caching the inverse for a matrix which does not frequently changed will help save computation expense. 
+# I wrote the pair of functions that cache the inverse of a matrix.
 
 
 #The function "makeCacheMatrix" will create a special "matrix" object that can cache its inverse.It returns the list of all functions that
@@ -27,7 +27,7 @@ makeCacheMatrix <- function(x = matrix())
   #Define the function which will return the value of the  matrix x
   get <- function() x
   
-  #Define the function which will set the value of the inverse of the matrix (inverse is called as i). Pease note <<- operator is use
+  #Define the function which will set the value of the inverse of the matrix (inverse is called as i). Pease note <<- operator is used
   # for value assignment. This is to cache the value of the matrix inverse.
   setinverse <- function(inverse) i <<- inverse
   
@@ -49,7 +49,7 @@ cacheSolve <- function(x,...)
   #Find the matrix inverse, if already exits.
   i <- x$getinverse()
   
-  #Check if the inverse is null or not. If NOT NULL, the value of the inverse is extract from the cache.It will exit the function
+  #Check if the inverse is null or not. If NOT NULL, the value of the inverse is extract from the cache. It will exit the function
   # after retrieving the matrix inverse
   if(!is.null(i))
   {
@@ -58,8 +58,7 @@ cacheSolve <- function(x,...)
   }
   
   # In case, cache value does not exists or is null, we will calculate the matrix inverse from scratch. The following
-  # steop will retrive the value of the original matrix.
-  # the 
+  # step will retrive the value of the original matrix.
   data <- x$get()
   
   #Calculate the inverse of the matrix using solve function. Assumption: original matrix is a square invertible matrix.
