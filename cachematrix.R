@@ -3,6 +3,7 @@
 # hence caching the inverse for a matrix which is not changed will help save computation expense. I wrote the pair of
 # functions that cache the inverse of a matrix.
 
+
 #The function "makeCacheMatrix" will create a special "matrix" object that can cache its inverse.It returns the list of all functions that
 # can be applied on the special matrix object (such as set/get matrix, set/get matrix inverse)
 
@@ -36,13 +37,13 @@ makeCacheMatrix <- function(x = matrix())
   
   # Returns the list of all the functions defined inside the function "makeCacheMatrix". This list will be returned as the output.
   list(set = set, get =  get, setinverse = setinverse, getinverse = getinverse)
-
   
 }
 
 
 # The function "cacheSolve" computes the inverse of the special "matrix" returned by makeCacheMatrix above. If the inverse has already been 
 # calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
+
 cacheSolve <- function(x,...)
 { 
   #Find the matrix inverse, if already exits.
